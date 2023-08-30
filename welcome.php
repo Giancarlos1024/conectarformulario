@@ -1,20 +1,20 @@
 <?php
 
-    $server = 'localhost:3309'; //Deben ingresar su puerto de Mysql de ustedes
-    $username = 'root';
+    $server = ''; //Deben ingresar su puerto de Mysql de ustedes
+    $username = '';
     $password = '';
-    $database ='Supermercado'; //Ingresen su base de datos, que crearon en el phpMyAdmin
+    $database =''; //Ingresen su base de datos, que crearon en el phpMyAdmin
 
     try{
         $con = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
         //echo"conexion exitosa";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = $_POST["name"];
-            $email = $_POST["email"];
+            $name = $_POST[""];
+            $email = $_POST[""];
         
             // Preparar la consulta SQL para insertar los datos en la tabla
-            $sql = "INSERT INTO usuarios (nombre, email) VALUES (:nombre, :email)";
+            $sql = "INSERT INTO  (nombre, email) VALUES (:nombre, :email)";
             
             // Preparar la sentencia
             $stmt = $con->prepare($sql);
