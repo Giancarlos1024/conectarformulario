@@ -10,18 +10,18 @@
         //echo"conexion exitosa";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = $_POST[""];
-            $email = $_POST[""];
+            $nombre1 = $_POST[""];
+            $pwd1 = $_POST[""];
         
             // Preparar la consulta SQL para insertar los datos en la tabla
-            $sql = "INSERT INTO  (nombre, email) VALUES (:nombre, :email)";
+            $sql = "INSERT INTO  (name, Password) VALUES (:nombre, :pwd)";
             
             // Preparar la sentencia
             $stmt = $con->prepare($sql);
             
             // Asignar valores a los parámetros
-            $stmt->bindParam(':nombre', $name);
-            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':nombre', $nombre1);
+            $stmt->bindParam(':pwd', $pwd1);
             
             // Ejecutar la consulta
             if ($stmt->execute()) {
